@@ -52,13 +52,26 @@
 
 .about-tile-yellow {
   min-height: 12rem;
-  justify-items: center;
+  justify-items: start;
   background-color: var(--yellow);
 }
 
+.about-tile-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .about-tile-symbol {
-  font-size: clamp(5rem, 12vw, 8rem);
+  flex: 0 0 auto;
+  font-size: clamp(6rem, 11vw, 9rem);
   line-height: 1;
+}
+
+.about-tile-row p {
+  font-size: clamp(1rem, 1.8vw, 1.3rem);
+  font-weight: 700;
+  line-height: 1.35;
 }
 
 .about-tile-mint {
