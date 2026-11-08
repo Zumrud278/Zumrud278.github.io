@@ -15,10 +15,9 @@
   display: flex;
   gap: 0.5rem;
   overflow-x: auto;
-  border: 1px solid rgb(28 28 30 / 10%);
-  border-bottom-color: rgb(28 28 30 / 18%);
-  border-radius: 0.5rem 0.5rem 0 0;
-  background-color: #fffdf8;
+  border: var(--border-strong);
+  border-bottom: 0;
+  background-color: var(--mint);
 }
 
 .about-tab {
@@ -27,7 +26,7 @@
   border: 0;
   border-bottom: 3px solid transparent;
   background: transparent;
-  color: #454549;
+  color: var(--black);
   cursor: pointer;
   font: inherit;
   font-weight: 600;
@@ -35,22 +34,23 @@
 
 .about-tab:hover,
 .about-tab:focus-visible {
-  color: var(--green-accessible);
+  background-color: var(--lilac);
+  color: var(--black);
 }
 
 .about-tab[aria-selected="true"] {
-  border-bottom-color: var(--green-accessible);
-  color: var(--green-accessible);
+  border-bottom-color: var(--black);
+  background-color: var(--yellow);
+  color: var(--black);
 }
 
 .about-panel {
   margin-top: 0;
   padding: clamp(1.25rem, 4vw, 2rem);
-  border: 1px solid rgb(28 28 30 / 10%);
+  border: var(--border-strong);
   border-top: 0;
-  border-radius: 0 0 0.5rem 0.5rem;
-  background-color: #fffdf8;
-  box-shadow: 0 0.5rem 1.5rem rgb(28 28 30 / 5%);
+  background-color: var(--background);
+  box-shadow: var(--hard-shadow);
 }
 
 .about-panel p + p {
@@ -73,9 +73,9 @@
   align-items: center;
   gap: 1rem;
   padding: 1.25rem;
-  border: 1.5px solid var(--charcoal);
-  border-radius: 12px;
-  background-color: #eaf0e9;
+  border: var(--border-strong);
+  background-color: var(--mint);
+  box-shadow: var(--hard-shadow);
 }
 
 .qualification-icon {
@@ -84,9 +84,8 @@
   height: 3rem;
   flex: 0 0 3rem;
   place-items: center;
-  border: 1.5px solid var(--charcoal);
-  border-radius: 50%;
-  background-color: #fff;
+  border: 2px solid var(--black);
+  background-color: var(--background);
   color: var(--charcoal);
 }
 
@@ -111,6 +110,7 @@
   gap: 0.3rem;
   margin-top: 0.65rem;
   color: var(--green-accessible);
+  font-family: var(--font-small);
   font-size: 0.875rem;
   font-weight: 600;
   text-decoration: none;
@@ -137,9 +137,9 @@
   align-items: center;
   gap: 1rem;
   padding: clamp(1.25rem, 4vw, 2rem);
-  border: 1.5px solid var(--charcoal);
-  border-radius: 12px;
-  background-color: #f1eee3;
+  border: var(--border-strong);
+  background-color: var(--yellow);
+  box-shadow: var(--hard-shadow);
 }
 
 .achievement-icon {
@@ -148,9 +148,8 @@
   height: 3.25rem;
   flex: 0 0 3.25rem;
   place-items: center;
-  border: 1.5px solid var(--charcoal);
-  border-radius: 50%;
-  background-color: #fff;
+  border: 2px solid var(--black);
+  background-color: var(--background);
   color: var(--charcoal);
 }
 
@@ -166,13 +165,14 @@
 
 .achievement-meta {
   margin-top: 0.4rem;
-  color: #555558;
+  color: var(--black);
+  font-family: var(--font-small);
   font-size: 0.9rem;
 }
 
 .achievement-content p:last-child {
   margin-top: 1rem;
-  color: #353538;
+  color: var(--black);
   font-size: 0.95rem;
 }
 
@@ -187,17 +187,7 @@
 .qualification-card:hover,
 .achievement-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 0.75rem 1.75rem rgb(28 28 30 / 12%);
-}
-
-.qualification-card,
-.achievement-card {
-  transition: transform 180ms ease;
-}
-
-.qualification-card:hover,
-.achievement-card:hover {
-  box-shadow: none;
+  box-shadow: 8px 8px 0 var(--black);
 }
 
 .about-panel:not([hidden]) {
@@ -228,9 +218,9 @@
 
 .project-card {
   overflow: hidden;
-  border: 1px solid rgb(28 28 30 / 12%);
-  border-radius: 0.5rem;
-  background-color: #fffdf8;
+  border: var(--border-strong);
+  background-color: var(--lilac);
+  box-shadow: var(--hard-shadow);
 }
 
 .project-card img {
@@ -239,6 +229,7 @@
   aspect-ratio: 16 / 9;
   object-fit: cover;
   object-position: center;
+  border-bottom: var(--border-strong);
 }
 
 .project-card-content {
@@ -251,7 +242,7 @@
 }
 
 .project-card p {
-  color: #454549;
+  color: var(--black);
 }
 
 .project-card .button {
@@ -292,30 +283,32 @@
 .button {
   display: inline-block;
   padding: 0.8rem 1.25rem;
-  border: 2px solid var(--green-accessible);
-  border-radius: 0.25rem;
-  background-color: var(--green-accessible);
-  color: var(--ivory);
+  border: var(--border-strong);
+  background-color: var(--green);
+  box-shadow: 4px 4px 0 var(--black);
+  color: var(--background);
   font-weight: 600;
   text-decoration: none;
-  transition: background-color 160ms ease, color 160ms ease;
+  transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
 }
 
 .button:hover,
 .button:focus-visible {
-  background-color: transparent;
-  color: var(--green-accessible);
+  transform: translate(2px, 2px);
+  background-color: var(--yellow);
+  box-shadow: 2px 2px 0 var(--black);
+  color: var(--black);
 }
 
 .button-secondary {
-  background-color: transparent;
-  color: var(--green-accessible);
+  background-color: var(--yellow);
+  color: var(--black);
 }
 
 .button-secondary:hover,
 .button-secondary:focus-visible {
-  background-color: var(--green-accessible);
-  color: var(--ivory);
+  background-color: var(--mint);
+  color: var(--black);
 }
 
 /* Social links */
@@ -350,10 +343,9 @@
 
 .contact-card {
   padding: clamp(1.25rem, 4vw, 2rem);
-  border: 1px solid rgb(28 28 30 / 10%);
-  border-radius: 0.5rem;
-  background-color: #fffdf8;
-  box-shadow: 0 0.5rem 1.5rem rgb(28 28 30 / 5%);
+  border: var(--border-strong);
+  background-color: var(--pink);
+  box-shadow: var(--hard-shadow);
 }
 
 .contact-card .page-title {
@@ -380,10 +372,9 @@
 .form-field textarea {
   width: 100%;
   padding: 0.7rem 0.8rem;
-  border: 1px solid #8a8a8d;
-  border-radius: 0.25rem;
-  background-color: #fff;
-  color: var(--charcoal);
+  border: 2px solid var(--black);
+  background-color: var(--background);
+  color: var(--black);
   font: inherit;
 }
 
@@ -394,8 +385,8 @@
 
 .form-field input:focus-visible,
 .form-field textarea:focus-visible {
-  outline: 2px solid var(--green-accessible);
-  outline-offset: 2px;
+  outline: 3px solid var(--green);
+  outline-offset: 3px;
 }
 
 .contact-form .button {

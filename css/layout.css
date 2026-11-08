@@ -33,7 +33,7 @@ main {
   isolation: isolate;
   overflow: hidden;
   padding-block: clamp(4rem, 10vw, 7rem) 8rem;
-  background-color: #315a40;
+  background-color: var(--green);
   color: var(--ivory);
 }
 
@@ -86,7 +86,8 @@ main {
   display: block;
   width: 100%;
   aspect-ratio: 1;
-  border-radius: 50%;
+  border: var(--border-strong);
+  box-shadow: var(--hard-shadow);
   object-fit: cover;
 }
 
@@ -110,9 +111,9 @@ main {
 
 .site-name {
   flex: 0 0 auto;
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-heading);
   font-size: 1.25rem;
-  font-weight: 600;
+  font-weight: 700;
   white-space: nowrap;
 }
 
@@ -121,9 +122,9 @@ main {
   align-items: center;
   gap: 0.25rem;
   padding: 0.35rem 0.5rem;
-  border: 1px solid rgb(28 28 30 / 14%);
-  border-radius: 999px;
-  background-color: #fffdf8;
+  border: var(--border-strong);
+  background-color: var(--background);
+  box-shadow: 4px 4px 0 var(--black);
 }
 
 .nav-links {
@@ -138,7 +139,6 @@ main {
 .nav-links a {
   display: inline-block;
   padding: 0.55rem 0.85rem;
-  border-radius: 999px;
   color: var(--charcoal);
   font-weight: 500;
   white-space: nowrap;
@@ -147,13 +147,13 @@ main {
 
 .nav-links a:hover:not([aria-current="page"]),
 .nav-links a:focus-visible:not([aria-current="page"]) {
-  background-color: rgb(74 124 89 / 10%);
-  color: var(--green-accessible);
+  background-color: var(--mint);
+  color: var(--black);
 }
 
 .nav-links a[aria-current="page"] {
-  background-color: var(--green-accessible);
-  color: var(--ivory);
+  background-color: var(--yellow);
+  color: var(--black);
 }
 
 .nav-links a:focus-visible,
@@ -170,14 +170,15 @@ main {
   flex: 0 0 2.5rem;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
+  border: 2px solid transparent;
   color: var(--charcoal);
   transition: background-color 160ms ease, color 160ms ease;
 }
 
 .nav-repository:hover {
-  background-color: rgb(74 124 89 / 10%);
-  color: var(--green-accessible);
+  border-color: var(--black);
+  background-color: var(--mint);
+  color: var(--black);
 }
 
 .nav-repository svg {
@@ -194,25 +195,26 @@ main {
   flex-direction: column;
   gap: 5px;
   padding: 0.5rem;
-  border: 1px solid var(--green);
-  border-radius: 0.25rem;
-  background: transparent;
+  border: var(--border-strong);
+  background: var(--yellow);
+  box-shadow: 3px 3px 0 var(--black);
   cursor: pointer;
 }
 
 .menu-toggle span {
   width: 1.25rem;
   height: 2px;
-  background-color: var(--charcoal);
+  background-color: var(--black);
 }
 
 /* Footer */
 .site-footer {
   width: 100%;
   padding-block: 0.75rem;
-  background-color: #315a40;
+  background-color: var(--green);
   color: var(--ivory);
   font-size: 0.875rem;
+  border-block: var(--border-strong);
 }
 
 .footer-inner {
@@ -228,7 +230,7 @@ main {
 .footer-name {
   flex: 0 0 auto;
   color: var(--ivory);
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-heading);
   font-size: 1.05rem;
   font-weight: 600;
   text-decoration: none;
@@ -243,6 +245,8 @@ main {
   margin: 0;
   padding: 0;
   list-style: none;
+  font-family: var(--font-small);
+  font-size: 0.8rem;
 }
 
 .footer-nav a {
@@ -330,7 +334,6 @@ main {
     gap: 0.5rem;
     margin-top: 0.65rem;
     padding: 0.65rem;
-    border-radius: 1.25rem;
   }
 
   .js-enabled .site-nav.is-open .nav-menu {

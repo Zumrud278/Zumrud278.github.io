@@ -1,12 +1,22 @@
 /* Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
 
 /* Theme */
 :root {
-  --green: #4a7c59;
-  --green-accessible: #416e4f;
-  --ivory: #f5f1e8;
-  --charcoal: #1c1c1e;
+  --background: #F4F1E6;
+  --black: #111;
+  --green: #4A7C59;
+  --yellow: #F5D547;
+  --mint: #CDE8C2;
+  --lilac: #D9CCF5;
+  --pink: #F6C7C0;
+  --green-accessible: var(--green);
+  --ivory: var(--background);
+  --charcoal: var(--black);
+  --font-heading: 'Archivo', sans-serif;
+  --font-small: 'Space Mono', monospace;
+  --border-strong: 3px solid var(--black);
+  --hard-shadow: 6px 6px 0 var(--black);
 }
 
 /* Reset */
@@ -29,8 +39,8 @@ p {
 
 /* Typography */
 body {
-  background-color: var(--ivory);
-  color: var(--charcoal);
+  background-color: var(--background);
+  color: var(--black);
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
@@ -42,7 +52,12 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Playfair Display', serif;
-  font-weight: 600;
+  font-family: var(--font-heading);
+  font-weight: 700;
   line-height: 1.2;
+}
+
+small {
+  font-family: var(--font-small);
+  font-size: 0.8em;
 }
