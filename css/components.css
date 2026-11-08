@@ -13,48 +13,82 @@
 
 .tab-list {
   display: flex;
-  gap: 0.5rem;
+  align-items: stretch;
+  gap: 0.75rem;
   overflow-x: auto;
-  border: var(--border-strong);
-  border-bottom: 0;
-  background-color: var(--mint);
+  padding: 0.35rem 0.35rem 0.75rem;
 }
 
 .about-tab {
   flex: 0 0 auto;
-  padding: 0.85rem 1rem;
-  border: 0;
-  border-bottom: 3px solid transparent;
-  background: transparent;
+  padding: 0.65rem 1rem;
+  border: var(--border-strong);
+  background-color: var(--background);
+  box-shadow: 4px 4px 0 var(--black);
   color: var(--black);
   cursor: pointer;
   font: inherit;
   font-weight: 600;
+  transition: transform 120ms ease, box-shadow 120ms ease, background-color 120ms ease;
 }
 
 .about-tab:hover,
 .about-tab:focus-visible {
   background-color: var(--lilac);
   color: var(--black);
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--black);
 }
 
 .about-tab[aria-selected="true"] {
-  border-bottom-color: var(--black);
   background-color: var(--yellow);
   color: var(--black);
 }
 
 .about-panel {
   margin-top: 0;
-  padding: clamp(1.25rem, 4vw, 2rem);
-  border: var(--border-strong);
-  border-top: 0;
-  background-color: var(--background);
-  box-shadow: var(--hard-shadow);
+  padding: 0.5rem 0.35rem 0.75rem;
 }
 
-.about-panel p + p {
-  margin-top: 1rem;
+.who-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.who-tile {
+  display: grid;
+  min-height: 12rem;
+  align-content: center;
+  justify-items: start;
+  padding: clamp(1.25rem, 4vw, 2rem);
+  border: var(--border-strong);
+  box-shadow: var(--hard-shadow);
+  font-size: clamp(1.1rem, 2.4vw, 1.5rem);
+  font-weight: 700;
+}
+
+.who-tile-green {
+  background-color: var(--green);
+  color: #fff;
+}
+
+.who-tile-yellow {
+  justify-items: center;
+  background-color: var(--yellow);
+}
+
+.who-tile-yellow span {
+  font-size: clamp(5rem, 12vw, 8rem);
+  line-height: 1;
+}
+
+.who-tile-mint {
+  background-color: var(--mint);
+}
+
+.who-tile-pink {
+  background-color: var(--pink);
 }
 
 .about-panel[hidden] {
@@ -76,6 +110,22 @@
   border: var(--border-strong);
   background-color: var(--mint);
   box-shadow: var(--hard-shadow);
+}
+
+.qualification-card:nth-child(4n + 1) {
+  background-color: var(--mint);
+}
+
+.qualification-card:nth-child(4n + 2) {
+  background-color: var(--yellow);
+}
+
+.qualification-card:nth-child(4n + 3) {
+  background-color: var(--lilac);
+}
+
+.qualification-card:nth-child(4n) {
+  background-color: var(--pink);
 }
 
 .qualification-icon {
@@ -129,7 +179,8 @@
 
 .achievement-list {
   display: grid;
-  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
 }
 
 .achievement-card {
@@ -140,6 +191,10 @@
   border: var(--border-strong);
   background-color: var(--yellow);
   box-shadow: var(--hard-shadow);
+}
+
+.achievement-card:nth-child(2n) {
+  background-color: var(--pink);
 }
 
 .achievement-icon {
@@ -441,8 +496,17 @@
 }
 
 @media (max-width: 650px) {
+  .who-grid,
   .qualification-grid {
     grid-template-columns: 1fr;
+  }
+
+  .achievement-list {
+    grid-template-columns: 1fr;
+  }
+
+  .who-tile {
+    min-height: 9rem;
   }
 
   .contact-layout {
@@ -460,5 +524,9 @@
 
   .about-panel:not([hidden]) {
     animation: none;
+  }
+
+  .about-tab {
+    transition: none;
   }
 }
