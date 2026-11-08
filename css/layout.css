@@ -158,32 +158,95 @@ main {
 
 /* Footer */
 .site-footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  padding: 1.25rem 1.5rem;
+  padding: 2rem max(1.5rem, calc((100% - 1100px) / 2));
   border-top: 1px solid rgb(28 28 30 / 12%);
   color: var(--charcoal);
   font-size: 0.9rem;
 }
 
-.github-link {
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.footer-column h2 {
+  margin-bottom: 0.75rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.footer-nav {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  gap: 0.35rem 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-nav a,
+.repository-link {
+  color: var(--charcoal);
+  text-decoration: none;
+}
+
+.footer-nav a:hover,
+.footer-nav a:focus-visible,
+.repository-link:hover,
+.repository-link:focus-visible {
+  color: var(--green-accessible);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.footer-social {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.footer-icon-link {
   display: inline-flex;
   color: var(--charcoal);
 }
 
-.github-link:hover,
-.github-link:focus-visible {
-  color: var(--green);
+.footer-icon-link:hover,
+.footer-icon-link:focus-visible {
+  color: var(--green-accessible);
 }
 
-.github-link svg {
-  width: 1.4rem;
-  height: 1.4rem;
+.footer-icon-link svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.repository-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.repository-link svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.footer-copyright {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgb(28 28 30 / 12%);
+  color: #454549;
 }
 
 @media (max-width: 650px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
   #home {
     grid-template-columns: 1fr;
     gap: 2.5rem;
