@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Zumrud's personal portfolio.">
+    <title>Zumrud | Portfolio</title>
+    <link rel="stylesheet" href="css/base.css">
+    <style>
+      main {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(220px, 360px);
+        align-items: center;
+        gap: clamp(2rem, 8vw, 7rem);
+        width: min(1100px, calc(100% - 3rem));
+        min-height: 100vh;
+        margin-inline: auto;
+        padding-block: 4rem;
+      }
+
+      .intro {
+        max-width: 620px;
+      }
+
+      h1 {
+        margin-bottom: 1.25rem;
+        font-size: clamp(3rem, 8vw, 5.5rem);
+      }
+
+      .intro p {
+        max-width: 55ch;
+        font-size: 1.125rem;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      .button {
+        display: inline-block;
+        padding: 0.8rem 1.25rem;
+        border: 2px solid var(--green);
+        border-radius: 0.25rem;
+        background-color: var(--green);
+        color: var(--ivory);
+        font-weight: 600;
+        text-decoration: none;
+        transition: background-color 160ms ease, color 160ms ease;
+      }
+
+      .button:hover,
+      .button:focus-visible {
+        background-color: transparent;
+        color: var(--green);
+      }
+
+      .button-secondary {
+        background-color: transparent;
+        color: var(--green);
+      }
+
+      .button-secondary:hover,
+      .button-secondary:focus-visible {
+        background-color: var(--green);
+        color: var(--ivory);
+      }
+
+      .profile-photo {
+        display: block;
+        width: 100%;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      @media (max-width: 650px) {
+        main {
+          grid-template-columns: 1fr;
+          gap: 2.5rem;
+          align-content: center;
+          padding-block: 3rem;
+        }
+
+        .profile-photo {
+          grid-row: 1;
+          width: min(65vw, 280px);
+          justify-self: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="intro" aria-labelledby="intro-title">
+        <h1 id="intro-title">Zumrud</h1>
+        <p>Your introduction goes here. Replace this placeholder with a short paragraph about yourself.</p>
+        <div class="actions">
+          <a class="button" href="#projects">See my projects</a>
+          <a class="button button-secondary" href="#about">About me</a>
+        </div>
+      </section>
+      <img class="profile-photo" src="assets/images/profile.jpg" alt="Portrait of Zumrud">
+    </main>
+  </body>
+</html>
