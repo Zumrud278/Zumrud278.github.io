@@ -1,5 +1,5 @@
 (() => {
-  const colors = ['#4A7C59', '#F5D547', '#F28C7A', '#D9CCF5'];
+  const colors = ['#2E7D4F', '#FFC93C', '#FF6B57', '#8E6BFF'];
   const blockedSelectors = [
     '.site-nav',
     '#home',
@@ -32,35 +32,54 @@
 
   canvas.setAttribute('aria-hidden', 'true');
   Object.assign(canvas.style, {
-    position: 'fixed',
-    inset: '0',
-    width: '100%',
-    height: '100%',
+    position: 'absolute',
+    top: '0',
+    left: '0',
     pointerEvents: 'none',
     zIndex: '3'
   });
   document.body.append(canvas);
 
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  let squares = [];
-  let blockedAreas = [];
-  let lastBlockedAreaUpdate = 0;
-  let pixelRatio = 1;
-
-  function random() {
-    return Math.random();
+  function valueFor(row, column, side, salt = 0) {
+    let value = Math.imul(row + 1, 374761393);
+    value = Math.imul(value ^ (column + 1), 668265263);
+    value = Math.imul(value ^ (side === 'left' ? 1013904223 : 1664525), 2246822519);
+    value = Math.imul(value ^ salt, 3266489917);
+    value ^= value >>> 13;
+    return (value >>> 0) / 4294967296;
   }
 
-  function createSquares() {
-    const width = window.innerWidth;
-    const height = window.innerHeight;
+  function drawBackground() {
+    const width = document.documentElement.clientWidth;
+    const height = Math.max(
+      document.body.scrollHeight,
+      document.documentElement.scrollHeight
+    );
+    const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
     const mobile = width <= 650;
-    const cellSize = mobile ? 32 : 26;
+    const cellSize = mobile ? 20 : 26;
     const sideWidth = width * 0.14;
     const columns = Math.ceil(sideWidth / cellSize);
     const rows = Math.ceil(height / cellSize);
-    const mobileDensity = mobile ? 0.22 : 1;
-    squares = [];
+    const mobileDensity = mobile ? 0.4 : 1;
+    const blockedAreas = [...document.querySelectorAll(blockedSelectors)].map((element) => {
+      const rect = element.getBoundingClientRect();
+      return {
+        left: rect.left + window.scrollX - 3,
+        top: rect.top + window.scrollY - 3,
+        right: rect.right + window.scrollX + 3,
+        bottom: rect.bottom + window.scrollY + 3
+      };
+    });
+
+    canvas.width = Math.round(width * pixelRatio);
+    canvas.height = Math.round(height * pixelRatio);
+    canvas.style.width = `${width}px`;
+    canvas.style.height = `${height}px`;
+    context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+    context.clearRect(0, 0, width, height);
+    context.globalAlpha = 1;
+    const snapToPixel = (value) => Math.round(value * pixelRatio) / pixelRatio;
 
     for (let column = 0; column < columns; column += 1) {
       for (let row = 0; row < rows; row += 1) {
@@ -72,16 +91,19 @@
           mobileDensity;
 
         for (const side of ['left', 'right']) {
-          if (random() >= density) {
+          if (valueFor(row, column, side) >= density) {
             continue;
           }
 
-          const size = mobile ? 6 + random() * 5 : 8 + random() * 9;
-          const offsetX = random() * (cellSize - size);
-          const offsetY = random() * (cellSize - size);
+          const size = snapToPixel(mobile
+            ? 6 + valueFor(row, column, side, 1) * 5
+            : 8 + valueFor(row, column, side, 1) * 9);
+          const offsetX = snapToPixel(valueFor(row, column, side, 2) * (cellSize - size));
+          const offsetY = snapToPixel(valueFor(row, column, side, 3) * (cellSize - size));
           const x = side === 'left'
-            ? column * cellSize + offsetX
-            : width - column * cellSize - offsetX - size;
+            ? snapToPixel(column * cellSize + offsetX)
+            : snapToPixel(width - column * cellSize - offsetX - size);
+          const y = snapToPixel(row * cellSize + offsetY);
 
           if (
             x < 0 ||
@@ -91,82 +113,31 @@
             continue;
           }
 
-          squares.push({
-            x,
-            y: row * cellSize + offsetY,
-            size,
-            color: colors[Math.floor(random() * colors.length)],
-            phase: random() * Math.PI * 2
-          });
+          const overlapsContent = blockedAreas.some((area) =>
+            x < area.right &&
+            x + size > area.left &&
+            y < area.bottom &&
+            y + size > area.top
+          );
+          if (overlapsContent) {
+            continue;
+          }
+
+          context.fillStyle = colors[Math.floor(valueFor(row, column, side, 4) * colors.length)];
+          context.fillRect(x, y, size, size);
         }
       }
     }
   }
 
-  function resizeCanvas() {
-    pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
-    canvas.width = Math.round(window.innerWidth * pixelRatio);
-    canvas.height = Math.round(window.innerHeight * pixelRatio);
-    context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
-    createSquares();
+  function initialize() {
+    drawBackground();
+    window.addEventListener('resize', drawBackground);
   }
 
-  function updateBlockedAreas(now) {
-    if (now - lastBlockedAreaUpdate < 200) {
-      return;
-    }
-
-    const padding = 3;
-    blockedAreas = [...document.querySelectorAll(blockedSelectors)].map((element) => {
-      const rect = element.getBoundingClientRect();
-      return {
-        left: rect.left - padding,
-        top: rect.top - padding,
-        right: rect.right + padding,
-        bottom: rect.bottom + padding
-      };
-    });
-    lastBlockedAreaUpdate = now;
+  if (document.readyState === 'complete') {
+    initialize();
+  } else {
+    window.addEventListener('load', initialize, { once: true });
   }
-
-  function draw(now) {
-    const width = window.innerWidth;
-    updateBlockedAreas(now);
-    context.clearRect(0, 0, width, window.innerHeight);
-
-    for (const square of squares) {
-      if (
-        blockedAreas.some((area) =>
-          square.x < area.right &&
-          square.x + square.size > area.left &&
-          square.y < area.bottom &&
-          square.y + square.size > area.top
-        )
-      ) {
-        continue;
-      }
-
-      const pulse = reducedMotion.matches
-        ? 0.75
-        : (Math.sin(now * 0.001 + square.phase) + 1) / 2;
-      if (pulse < 0.12) {
-        continue;
-      }
-
-      context.globalAlpha = 0.25 + pulse * 0.55;
-      context.fillStyle = square.color;
-      context.fillRect(square.x, square.y, square.size, square.size);
-    }
-
-    context.globalAlpha = 1;
-    window.requestAnimationFrame(draw);
-  }
-
-  window.addEventListener('resize', resizeCanvas);
-  window.addEventListener('scroll', () => {
-    lastBlockedAreaUpdate = 0;
-  }, { passive: true });
-
-  resizeCanvas();
-  window.requestAnimationFrame(draw);
 })();
