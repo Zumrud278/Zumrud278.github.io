@@ -69,26 +69,62 @@
 
 .qualification-card {
   display: flex;
-  min-height: 7rem;
-  align-items: flex-start;
-  gap: 0.85rem;
+  min-height: 6rem;
+  align-items: center;
+  gap: 1rem;
   padding: 1.25rem;
-  border: 1px solid rgb(28 28 30 / 10%);
-  border-top: 3px solid var(--green);
-  border-radius: 0.5rem;
-  background-color: #fffdf8;
-  box-shadow: 0 0.5rem 1.5rem rgb(28 28 30 / 5%);
+  border: 1.5px solid var(--charcoal);
+  border-radius: 12px;
+  background-color: #eaf0e9;
 }
 
 .qualification-icon {
-  flex: 0 0 auto;
-  font-size: 1.25rem;
-  line-height: 1.4;
+  display: grid;
+  width: 3rem;
+  height: 3rem;
+  flex: 0 0 3rem;
+  place-items: center;
+  border: 1.5px solid var(--charcoal);
+  border-radius: 50%;
+  background-color: #fff;
+  color: var(--charcoal);
+}
+
+.qualification-icon svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.qualification-content {
+  min-width: 0;
 }
 
 .qualification-card h2 {
   color: var(--charcoal);
   font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.credential-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.65rem;
+  color: var(--green-accessible);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.credential-link:hover,
+.credential-link:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.credential-link svg {
+  width: 1rem;
+  height: 1rem;
 }
 
 .achievement-list {
@@ -98,20 +134,29 @@
 
 .achievement-card {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 1rem;
   padding: clamp(1.25rem, 4vw, 2rem);
-  border: 1px solid rgb(28 28 30 / 10%);
-  border-left: 5px solid var(--green-accessible);
-  border-radius: 0.5rem;
-  background-color: #f5f1e8;
-  box-shadow: 0 0.5rem 1.5rem rgb(28 28 30 / 8%);
+  border: 1.5px solid var(--charcoal);
+  border-radius: 12px;
+  background-color: #f1eee3;
 }
 
 .achievement-icon {
-  flex: 0 0 auto;
-  font-size: 2rem;
-  line-height: 1.2;
+  display: grid;
+  width: 3.25rem;
+  height: 3.25rem;
+  flex: 0 0 3.25rem;
+  place-items: center;
+  border: 1.5px solid var(--charcoal);
+  border-radius: 50%;
+  background-color: #fff;
+  color: var(--charcoal);
+}
+
+.achievement-icon svg {
+  width: 1.75rem;
+  height: 1.75rem;
 }
 
 .achievement-content h2 {
@@ -121,12 +166,14 @@
 
 .achievement-meta {
   margin-top: 0.4rem;
-  color: #5b5b5e;
+  color: #555558;
   font-size: 0.9rem;
 }
 
 .achievement-content p:last-child {
   margin-top: 1rem;
+  color: #353538;
+  font-size: 0.95rem;
 }
 
 /* Card interactions */
@@ -141,6 +188,16 @@
 .achievement-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 0.75rem 1.75rem rgb(28 28 30 / 12%);
+}
+
+.qualification-card,
+.achievement-card {
+  transition: transform 180ms ease;
+}
+
+.qualification-card:hover,
+.achievement-card:hover {
+  box-shadow: none;
 }
 
 .about-panel:not([hidden]) {
