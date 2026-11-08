@@ -182,7 +182,7 @@
   flex-direction: column;
   overflow: hidden;
   border: var(--border-strong);
-  background-color: var(--lilac);
+  background-color: var(--background);
   box-shadow: var(--hard-shadow);
 }
 
@@ -202,14 +202,6 @@
 
 .project-card-header-yellow {
   background-color: var(--yellow);
-}
-
-.project-card-header-lilac {
-  background-color: var(--lilac);
-}
-
-.project-card-header-pink {
-  background-color: var(--pink);
 }
 
 .project-number {
@@ -237,6 +229,7 @@
   flex: 1;
   flex-direction: column;
   align-items: flex-start;
+  gap: 1.25rem;
   padding: 1.25rem;
 }
 
