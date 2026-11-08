@@ -1,4 +1,4 @@
-/* Navigation */
+/* Site layout */
 body {
   display: flex;
   min-height: 100vh;
@@ -22,6 +22,7 @@ main {
   padding-block: 4rem;
 }
 
+/* Social links */
 .social-links {
   display: flex;
   align-items: center;
@@ -43,6 +44,7 @@ main {
   height: 2rem;
 }
 
+/* Project cards */
 .page-title {
   margin-bottom: 2rem;
   font-size: clamp(2.5rem, 6vw, 4rem);
@@ -81,6 +83,77 @@ main {
   color: #454549;
 }
 
+/* Home page */
+#home {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 360px);
+  align-items: center;
+  gap: clamp(2rem, 8vw, 7rem);
+  width: min(1100px, calc(100% - 3rem));
+  margin-inline: auto;
+  padding-block: 4rem;
+}
+
+.intro {
+  max-width: 620px;
+}
+
+.welcome-title {
+  margin-bottom: 1.25rem;
+  color: var(--green);
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+}
+
+.intro p {
+  max-width: 55ch;
+  font-size: 1.125rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.8rem 1.25rem;
+  border: 2px solid var(--green-accessible);
+  border-radius: 0.25rem;
+  background-color: var(--green-accessible);
+  color: var(--ivory);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.button:hover,
+.button:focus-visible {
+  background-color: transparent;
+  color: var(--green-accessible);
+}
+
+.button-secondary {
+  background-color: transparent;
+  color: var(--green-accessible);
+}
+
+.button-secondary:hover,
+.button-secondary:focus-visible {
+  background-color: var(--green-accessible);
+  color: var(--ivory);
+}
+
+.profile-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Navigation */
 .site-nav {
   display: flex;
   align-items: center;
@@ -121,8 +194,8 @@ main {
 .nav-links a:hover,
 .nav-links a:focus-visible,
 .nav-links a[aria-current="page"] {
-  border-bottom-color: var(--green);
-  color: var(--green);
+  border-bottom-color: var(--green-accessible);
+  color: var(--green-accessible);
 }
 
 .menu-toggle {
@@ -174,6 +247,25 @@ main {
 }
 
 @media (max-width: 650px) {
+  #home {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-content: center;
+    padding-block: 3rem;
+  }
+
+  .profile-photo {
+    grid-column: 1;
+    grid-row: 1;
+    width: min(65vw, 280px);
+    justify-self: center;
+  }
+
+  #home .intro {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
   .site-nav {
     flex-wrap: wrap;
     padding-block: 0.75rem;
