@@ -258,6 +258,18 @@
   margin-top: 1rem;
 }
 
+.certificate-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 1rem;
+}
+
+.certificate-button svg {
+  width: 1rem;
+  height: 1rem;
+}
+
 /* Home page controls */
 .welcome-title {
   margin-bottom: 1.25rem;
