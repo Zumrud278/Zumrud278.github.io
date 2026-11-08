@@ -263,9 +263,22 @@
 
 /* Home page controls */
 .welcome-title {
+  display: grid;
+  justify-items: start;
   margin-bottom: 1.25rem;
-  color: var(--green);
-  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  color: var(--black);
+  font-size: clamp(3.5rem, 7vw, 6.5rem);
+  line-height: 0.98;
+}
+
+.welcome-name {
+  display: inline-block;
+  margin-block: 0.12em;
+  padding: 0.05em 0.18em 0.1em;
+  border: var(--border-strong);
+  background-color: var(--green);
+  color: #fff;
+  box-shadow: var(--hard-shadow);
 }
 
 .intro p {
@@ -307,6 +320,28 @@
 
 .button-secondary:hover,
 .button-secondary:focus-visible {
+  background-color: var(--mint);
+  color: var(--black);
+}
+
+.home-projects-button {
+  background-color: var(--yellow);
+  color: var(--black);
+}
+
+.home-projects-button:hover,
+.home-projects-button:focus-visible {
+  background-color: var(--mint);
+  color: var(--black);
+}
+
+.home-about-button {
+  background-color: #fff;
+  color: var(--black);
+}
+
+.home-about-button:hover,
+.home-about-button:focus-visible {
   background-color: var(--mint);
   color: var(--black);
 }
