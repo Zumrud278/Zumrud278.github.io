@@ -60,11 +60,9 @@ main {
   margin-inline: auto;
 }
 
-.about-tabs {
-  position: relative;
-  z-index: 1;
+.about-content {
   width: min(1000px, calc(100% - 3rem));
-  margin: -5rem auto 0;
+  margin: 2rem auto 0;
 }
 
 /* Home page layout */
