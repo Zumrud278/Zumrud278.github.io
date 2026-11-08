@@ -361,15 +361,15 @@
 /* Contact page */
 .contact-layout {
   display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(12rem, 1fr);
-  align-items: start;
-  gap: clamp(2rem, 6vw, 4rem);
+  grid-template-columns: minmax(0, 1.3fr) minmax(15rem, 0.7fr);
+  align-items: stretch;
+  gap: 1.25rem;
 }
 
 .contact-card {
   padding: clamp(1.25rem, 4vw, 2rem);
   border: var(--border-strong);
-  background-color: var(--pink);
+  background-color: #fff;
   box-shadow: var(--hard-shadow);
 }
 
@@ -418,18 +418,76 @@
 
 .contact-form .button {
   justify-self: start;
+  border: var(--border-strong);
+  background-color: var(--yellow);
+  box-shadow: 4px 4px 0 var(--black);
+  color: var(--black);
   cursor: pointer;
-  font: inherit;
+  font-family: var(--font-small);
+  font-size: 0.875rem;
+}
+
+.contact-form .button:hover,
+.contact-form .button:focus-visible {
+  background-color: var(--mint);
 }
 
 .contact-social {
-  padding-top: 0.5rem;
+  display: grid;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
 }
 
-.contact-social h2 {
-  margin-bottom: 1rem;
-  color: var(--charcoal);
-  font-size: 1.5rem;
+.contact-social-tile {
+  display: flex;
+  min-height: 10rem;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+  border: var(--border-strong);
+  box-shadow: var(--hard-shadow);
+}
+
+.contact-social-tile h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.contact-linkedin-tile {
+  background-color: var(--green);
+  color: #fff;
+}
+
+.contact-github-tile {
+  background-color: var(--lilac);
+}
+
+.contact-link-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 0.75rem;
+  border: 2px solid var(--black);
+  background-color: #fff;
+  box-shadow: 3px 3px 0 var(--black);
+  color: var(--black);
+  font-family: var(--font-small);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.contact-link-button:hover,
+.contact-link-button:focus-visible {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--black);
+}
+
+.contact-link-button svg {
+  width: 1.25rem;
+  height: 1.25rem;
 }
 
 @media (max-width: 650px) {
@@ -448,6 +506,11 @@
   .contact-layout {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+
+  .contact-social {
+    grid-template-rows: none;
+    grid-template-columns: 1fr;
   }
 }
 
