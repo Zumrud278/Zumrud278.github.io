@@ -27,7 +27,8 @@
   box-shadow: 4px 4px 0 var(--black);
   color: var(--black);
   cursor: pointer;
-  font: inherit;
+  font-family: var(--font-small);
+  font-size: 0.85rem;
   font-weight: 600;
   transition: transform 120ms ease, box-shadow 120ms ease, background-color 120ms ease;
 }
@@ -355,6 +356,8 @@
   background-color: var(--green);
   box-shadow: 4px 4px 0 var(--black);
   color: var(--background);
+  font-family: var(--font-small);
+  font-size: 0.875rem;
   font-weight: 600;
   text-decoration: none;
   transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
@@ -455,6 +458,8 @@
 }
 
 .form-field label {
+  font-family: var(--font-small);
+  font-size: 0.875rem;
   font-weight: 600;
 }
 

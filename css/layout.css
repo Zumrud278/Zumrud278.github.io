@@ -139,6 +139,7 @@ main {
   background-color: var(--background);
   box-shadow: 4px 4px 0 var(--black);
   color: var(--charcoal);
+  font-family: var(--font-small);
   font-weight: 500;
   white-space: nowrap;
   transition: transform 120ms ease, box-shadow 120ms ease, background-color 120ms ease;
