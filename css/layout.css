@@ -155,6 +155,44 @@ main {
   font-size: 1.1rem;
 }
 
+.achievement-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: clamp(1.25rem, 4vw, 2rem);
+  border: 1px solid rgb(28 28 30 / 10%);
+  border-left: 5px solid var(--green-accessible);
+  border-radius: 0.5rem;
+  background-color: #f5f1e8;
+  box-shadow: 0 0.5rem 1.5rem rgb(28 28 30 / 8%);
+}
+
+.achievement-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.achievement-icon {
+  flex: 0 0 auto;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.achievement-content h2 {
+  color: var(--charcoal);
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+}
+
+.achievement-meta {
+  margin-top: 0.4rem;
+  color: #5b5b5e;
+  font-size: 0.9rem;
+}
+
+.achievement-content p:last-child {
+  margin-top: 1rem;
+}
+
 .about-panel[hidden] {
   display: none;
 }
