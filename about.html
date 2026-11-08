@@ -32,31 +32,72 @@
         </ul>
       </nav>
     </header>
-    <main class="page-content">
-      <h1 class="page-title">About me</h1>
-      <section class="about-grid" aria-label="About Zumrud">
-        <article class="about-card">
-          <h2><span aria-hidden="true">🌱</span> A little about me</h2>
+    <main class="about-page">
+      <header class="about-intro">
+        <div class="about-intro-content">
+          <h1 class="about-title">About me</h1>
+          <p>A little about my background, interests, and how I learn.</p>
+        </div>
+      </header>
+      <section class="about-tabs" aria-label="About information">
+        <div class="tab-list" role="tablist" aria-label="About sections">
+          <button
+            class="about-tab"
+            id="tab-who"
+            type="button"
+            role="tab"
+            aria-selected="true"
+            aria-controls="panel-who"
+            tabindex="0"
+          >Who Am I</button>
+          <button
+            class="about-tab"
+            id="tab-qualifications"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-qualifications"
+            tabindex="-1"
+          >Qualifications</button>
+          <button
+            class="about-tab"
+            id="tab-achievements"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-achievements"
+            tabindex="-1"
+          >Achievements</button>
+        </div>
+        <section class="about-panel" id="panel-who" role="tabpanel" aria-labelledby="tab-who" tabindex="0">
           <p>I am studying IT at ADA University, where I am in my second year (including the EAPP foundation year).</p>
-        </article>
-        <article class="about-card">
-          <h2><span aria-hidden="true">🧮</span> What I enjoy</h2>
           <p>Math is what I enjoy most, especially complex problems where I have to search for a solution. I am also curious about technology and like exploring new things in it.</p>
-        </article>
-        <article class="about-card">
-          <h2><span aria-hidden="true">🛠️</span> How I learn</h2>
           <p>I prefer working on real projects over studying learning materials. It is more interesting for me, and I learn more that way.I don't have a strict plan or a motto. I take things as they come and let life show me how to live it.</p>
-        </article>
-        <article class="about-card">
-          <h2><span aria-hidden="true">🏡</span> Outside university</h2>
           <p>Outside university, I like spending time with my family. I feel comfortable and happy around them. </p>
-        </article>
-        <article class="about-card about-card-placeholder">
-          <h2><span aria-hidden="true">🎓</span> Qualifications</h2>
-        </article>
-        <article class="about-card about-card-placeholder">
-          <h2><span aria-hidden="true">🏆</span> Achievements</h2>
-        </article>
+        </section>
+        <section class="about-panel" id="panel-qualifications" role="tabpanel" aria-labelledby="tab-qualifications" tabindex="0" hidden>
+          <div class="qualification-grid">
+            <article class="qualification-card">
+              <span class="qualification-icon" aria-hidden="true">📜</span>
+              <h2>Programming Foundations with JavaScript, HTML and CSS</h2>
+            </article>
+            <article class="qualification-card">
+              <span class="qualification-icon" aria-hidden="true">📜</span>
+              <h2>Generative AI</h2>
+            </article>
+            <article class="qualification-card">
+              <span class="qualification-icon" aria-hidden="true">📜</span>
+              <h2>Technical Support Fundamentals</h2>
+            </article>
+            <article class="qualification-card">
+              <span class="qualification-icon" aria-hidden="true">📜</span>
+              <h2>Programming for Everybody - Introduction to the Python</h2>
+            </article>
+          </div>
+        </section>
+        <section class="about-panel" id="panel-achievements" role="tabpanel" aria-labelledby="tab-achievements" tabindex="0" hidden>
+          <p>Placeholder text for achievements.</p>
+        </section>
       </section>
     </main>
     <footer class="site-footer">
