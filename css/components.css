@@ -129,6 +129,34 @@
   margin-top: 1rem;
 }
 
+/* Card interactions */
+.project-card,
+.qualification-card,
+.achievement-card {
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.project-card:hover,
+.qualification-card:hover,
+.achievement-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0.75rem 1.75rem rgb(28 28 30 / 12%);
+}
+
+.about-panel:not([hidden]) {
+  animation: panel-fade-in 220ms ease both;
+}
+
+@keyframes panel-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 /* Project cards */
 .page-title {
   margin-bottom: 2rem;
@@ -167,6 +195,10 @@
 
 .project-card p {
   color: #454549;
+}
+
+.project-card .button {
+  margin-top: 1rem;
 }
 
 /* Home page controls */
@@ -242,5 +274,17 @@
 @media (max-width: 650px) {
   .qualification-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card,
+  .qualification-card,
+  .achievement-card {
+    transition: none;
+  }
+
+  .about-panel:not([hidden]) {
+    animation: none;
   }
 }
