@@ -1,0 +1,246 @@
+/* About page */
+.about-title {
+  margin-bottom: 0.5rem;
+  color: var(--ivory);
+  font-size: clamp(3rem, 7vw, 5rem);
+}
+
+.about-intro p {
+  max-width: 55ch;
+  color: var(--ivory);
+  font-size: 1.125rem;
+}
+
+.tab-list {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  border: 1px solid rgb(28 28 30 / 10%);
+  border-bottom-color: rgb(28 28 30 / 18%);
+  border-radius: 0.5rem 0.5rem 0 0;
+  background-color: #fffdf8;
+}
+
+.about-tab {
+  flex: 0 0 auto;
+  padding: 0.85rem 1rem;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  color: #454549;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+}
+
+.about-tab:hover,
+.about-tab:focus-visible {
+  color: var(--green-accessible);
+}
+
+.about-tab[aria-selected="true"] {
+  border-bottom-color: var(--green-accessible);
+  color: var(--green-accessible);
+}
+
+.about-panel {
+  margin-top: 0;
+  padding: clamp(1.25rem, 4vw, 2rem);
+  border: 1px solid rgb(28 28 30 / 10%);
+  border-top: 0;
+  border-radius: 0 0 0.5rem 0.5rem;
+  background-color: #fffdf8;
+  box-shadow: 0 0.5rem 1.5rem rgb(28 28 30 / 5%);
+}
+
+.about-panel p + p {
+  margin-top: 1rem;
+}
+
+.about-panel[hidden] {
+  display: none;
+}
+
+.qualification-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.qualification-card {
+  display: flex;
+  min-height: 7rem;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 1.25rem;
+  border: 1px solid rgb(28 28 30 / 10%);
+  border-top: 3px solid var(--green);
+  border-radius: 0.5rem;
+  background-color: #fffdf8;
+  box-shadow: 0 0.5rem 1.5rem rgb(28 28 30 / 5%);
+}
+
+.qualification-icon {
+  flex: 0 0 auto;
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+
+.qualification-card h2 {
+  color: var(--charcoal);
+  font-size: 1.1rem;
+}
+
+.achievement-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.achievement-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: clamp(1.25rem, 4vw, 2rem);
+  border: 1px solid rgb(28 28 30 / 10%);
+  border-left: 5px solid var(--green-accessible);
+  border-radius: 0.5rem;
+  background-color: #f5f1e8;
+  box-shadow: 0 0.5rem 1.5rem rgb(28 28 30 / 8%);
+}
+
+.achievement-icon {
+  flex: 0 0 auto;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.achievement-content h2 {
+  color: var(--charcoal);
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+}
+
+.achievement-meta {
+  margin-top: 0.4rem;
+  color: #5b5b5e;
+  font-size: 0.9rem;
+}
+
+.achievement-content p:last-child {
+  margin-top: 1rem;
+}
+
+/* Project cards */
+.page-title {
+  margin-bottom: 2rem;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 1.5rem;
+}
+
+.project-card {
+  overflow: hidden;
+  border: 1px solid rgb(28 28 30 / 12%);
+  border-radius: 0.5rem;
+  background-color: #fffdf8;
+}
+
+.project-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+}
+
+.project-card-content {
+  padding: 1.25rem;
+}
+
+.project-card h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.project-card p {
+  color: #454549;
+}
+
+/* Home page controls */
+.welcome-title {
+  margin-bottom: 1.25rem;
+  color: var(--green);
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+}
+
+.intro p {
+  max-width: 55ch;
+  font-size: 1.125rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.8rem 1.25rem;
+  border: 2px solid var(--green-accessible);
+  border-radius: 0.25rem;
+  background-color: var(--green-accessible);
+  color: var(--ivory);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.button:hover,
+.button:focus-visible {
+  background-color: transparent;
+  color: var(--green-accessible);
+}
+
+.button-secondary {
+  background-color: transparent;
+  color: var(--green-accessible);
+}
+
+.button-secondary:hover,
+.button-secondary:focus-visible {
+  background-color: var(--green-accessible);
+  color: var(--ivory);
+}
+
+/* Social links */
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.social-link {
+  display: inline-flex;
+  color: var(--charcoal);
+}
+
+.social-link:hover,
+.social-link:focus-visible {
+  color: var(--green);
+}
+
+.social-link svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+@media (max-width: 650px) {
+  .qualification-grid {
+    grid-template-columns: 1fr;
+  }
+}
