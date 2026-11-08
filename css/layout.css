@@ -22,6 +22,27 @@ main {
   padding-block: 4rem;
 }
 
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.social-link {
+  display: inline-flex;
+  color: var(--charcoal);
+}
+
+.social-link:hover,
+.social-link:focus-visible {
+  color: var(--green);
+}
+
+.social-link svg {
+  width: 2rem;
+  height: 2rem;
+}
+
 .page-title {
   margin-bottom: 2rem;
   font-size: clamp(2.5rem, 6vw, 4rem);
