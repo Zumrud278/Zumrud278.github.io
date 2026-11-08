@@ -1,14 +1,9 @@
 /* About page */
 .about-title {
-  margin-bottom: 0.5rem;
-  color: var(--ivory);
+  margin-bottom: 1.5rem;
+  color: var(--black);
   font-size: clamp(3rem, 7vw, 5rem);
-}
-
-.about-intro p {
-  max-width: 55ch;
-  color: var(--ivory);
-  font-size: 1.125rem;
+  font-weight: 800;
 }
 
 .about-grid {

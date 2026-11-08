@@ -28,41 +28,9 @@ main {
   padding-bottom: 4rem;
 }
 
-.about-intro {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  padding-block: clamp(4rem, 10vw, 7rem) 8rem;
-  background-color: var(--green);
-  color: var(--ivory);
-}
-
-.about-intro::before {
-  position: absolute;
-  z-index: -1;
-  right: 6%;
-  bottom: 1.5rem;
-  width: min(12rem, 30vw);
-  height: 2rem;
-  background-image: conic-gradient(
-    rgb(245 241 232 / 3%) 25%,
-    transparent 0 50%,
-    rgb(245 241 232 / 3%) 0 75%,
-    transparent 0
-  );
-  background-size: 48px 48px;
-  content: "";
-}
-
-.about-intro-content {
-  position: relative;
-  width: min(1000px, calc(100% - 3rem));
-  margin-inline: auto;
-}
-
 .about-content {
   width: min(1000px, calc(100% - 3rem));
-  margin: 2rem auto 0;
+  margin: 3rem auto 0;
 }
 
 /* Home page layout */
