@@ -41,7 +41,7 @@
     const height = Math.max(0, footerTop);
     const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
     const mobile = width <= 650;
-    const cellSize = Math.round(width * 0.026 * pixelRatio) / pixelRatio;
+    const cellSize = Math.round(width * 0.02 * pixelRatio) / pixelRatio;
     const sideWidth = width * 0.14;
     const columns = Math.floor(sideWidth / cellSize);
     const rows = Math.floor(height / cellSize);
@@ -129,9 +129,9 @@
             continue;
           }
 
-          context.fillStyle = colors[
-            Math.floor(valueFor(row, column, side, vertical, cornerIndex + 1) * colors.length)
-          ];
+          const colorIndex =
+            (row + column + (side === 'right' ? 2 : 0)) % colors.length;
+          context.fillStyle = colors[colorIndex];
           context.fillRect(x, y, size, size);
         }
       }

@@ -22,6 +22,11 @@ main {
   padding-block: 4rem;
 }
 
+.projects-page {
+  width: min(990px, calc(100% - 3rem));
+  padding-block: 3.6rem;
+}
+
 /* About page layout */
 .about-page {
   width: 100%;
