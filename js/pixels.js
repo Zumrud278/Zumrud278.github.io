@@ -82,10 +82,10 @@
           0,
           1 - Math.sqrt(
             (column / Math.max(columns * 1.12, 1)) ** 2 +
-            (distanceFromCorner / Math.max(rows * 0.2, 1)) ** 2
+            (distanceFromCorner / Math.max(rows * 0.58, 1)) ** 2
           )
         );
-        const density = dissolve > 0 ? Math.pow(dissolve, 0.35) * mobileDensity : 0;
+        const density = dissolve > 0 ? Math.pow(dissolve, 1.8) * mobileDensity : 0;
 
         for (let cornerIndex = 0; cornerIndex < corners.length; cornerIndex += 1) {
           const { side, vertical } = corners[cornerIndex];
