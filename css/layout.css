@@ -23,8 +23,8 @@ main {
 }
 
 .projects-page {
-  width: min(1280px, calc(100% - 2.5rem));
-  padding-block: 2.5rem;
+  width: min(1080px, calc(100% - 2.5rem));
+  padding-block: 2rem;
 }
 
 /* About page layout */
@@ -41,7 +41,7 @@ main {
 /* Home page layout */
 #home {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(240px, 34vw);
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 30vw);
   align-items: center;
   gap: clamp(2rem, 6vw, 5.5rem);
   width: min(1280px, calc(100% - 2.5rem));
@@ -222,6 +222,13 @@ main {
   white-space: nowrap;
 }
 
+.footer-copyright {
+  flex: 0 0 auto;
+  color: var(--ivory);
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
 .footer-nav {
   display: flex;
   flex-wrap: wrap;
@@ -313,7 +320,7 @@ main {
   .profile-photo {
     grid-column: 1;
     grid-row: 1;
-    width: min(70vw, 300px);
+    width: min(58vw, 250px);
     justify-self: center;
   }
 
