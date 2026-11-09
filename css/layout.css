@@ -8,7 +8,7 @@ body {
 .site-header {
   position: relative;
   z-index: 2;
-  padding: 1rem 1.5rem 0;
+  padding: 0.75rem 1.25rem 0;
 }
 
 main {
@@ -17,40 +17,40 @@ main {
 }
 
 .page-content {
-  width: min(1100px, calc(100% - 3rem));
+  width: min(1280px, calc(100% - 2.5rem));
   margin-inline: auto;
-  padding-block: 4rem;
+  padding-block: 2.5rem;
 }
 
 .projects-page {
-  width: min(990px, calc(100% - 3rem));
-  padding-block: 3.6rem;
+  width: min(1280px, calc(100% - 2.5rem));
+  padding-block: 2.5rem;
 }
 
 /* About page layout */
 .about-page {
   width: 100%;
-  padding-bottom: 4rem;
+  padding-bottom: 2.5rem;
 }
 
 .about-content {
-  width: min(900px, calc(100% - 3rem));
-  margin: 2rem auto 0;
+  width: min(1100px, calc(100% - 2.5rem));
+  margin: 1.25rem auto 0;
 }
 
 /* Home page layout */
 #home {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(220px, 360px);
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 34vw);
   align-items: center;
-  gap: clamp(2rem, 8vw, 7rem);
-  width: min(1100px, calc(100% - 3rem));
+  gap: clamp(2rem, 6vw, 5.5rem);
+  width: min(1280px, calc(100% - 2.5rem));
   margin-inline: auto;
-  padding-block: 4rem;
+  padding-block: 2.5rem;
 }
 
 .intro {
-  max-width: 620px;
+  max-width: 720px;
 }
 
 .profile-photo {
@@ -68,7 +68,7 @@ main {
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
-  width: min(1100px, 100%);
+  width: min(1280px, 100%);
   max-width: 100%;
   min-height: 3.75rem;
   margin-inline: auto;
@@ -164,8 +164,10 @@ main {
 }
 
 .nav-repository svg {
-  width: 1.35rem;
-  height: 1.35rem;
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  overflow: visible;
 }
 
 .menu-toggle {
@@ -202,7 +204,7 @@ main {
 
 .footer-inner {
   display: flex;
-  width: min(1100px, calc(100% - 3rem));
+  width: min(1280px, calc(100% - 2.5rem));
   min-height: 2.75rem;
   align-items: center;
   justify-content: space-between;
@@ -261,16 +263,38 @@ main {
 }
 
 .footer-icon-link svg {
-  width: 1.35rem;
-  height: 1.35rem;
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  overflow: visible;
 }
 
 @media (max-width: 650px) {
+  .site-header {
+    padding: 0.75rem 1rem 0;
+  }
+
+  .page-content,
+  .projects-page {
+    width: calc(100% - 2rem);
+    padding-block: 2rem;
+  }
+
+  .about-content {
+    width: calc(100% - 2rem);
+    margin-top: 1rem;
+  }
+
+  .about-page {
+    padding-bottom: 2rem;
+  }
+
   .site-footer {
     text-align: center;
   }
 
   .footer-inner {
+    width: calc(100% - 2rem);
     flex-direction: column;
     gap: 0.75rem;
   }
@@ -281,15 +305,15 @@ main {
 
   #home {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 1.75rem;
     align-content: center;
-    padding-block: 3rem;
+    padding-block: 2rem;
   }
 
   .profile-photo {
     grid-column: 1;
     grid-row: 1;
-    width: min(65vw, 280px);
+    width: min(70vw, 300px);
     justify-self: center;
   }
 
@@ -301,7 +325,7 @@ main {
   .site-nav {
     justify-content: space-between;
     flex-wrap: wrap;
-    width: min(100%, 28rem);
+    width: 100%;
     gap: 0;
   }
 
