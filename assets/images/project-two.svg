@@ -1,3 +1,4 @@
+<!-- Decorative artwork used by the second project card. -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400">
   <rect width="640" height="400" fill="#1c1c1e"/>
   <path d="M96 300 230 92l132 208z" fill="#4a7c59"/>

@@ -1,3 +1,4 @@
+// Handles shared navigation and the client-side contact form demo.
 const menuToggle = document.querySelector('.menu-toggle');
 const siteNav = document.querySelector('.site-nav');
 const navLinks = document.querySelectorAll('.nav-links a');
