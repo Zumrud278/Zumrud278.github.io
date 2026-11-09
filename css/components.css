@@ -367,7 +367,8 @@
   display: grid;
   margin-bottom: 1.25rem;
   font-size: clamp(4rem, 9vw, 7.5rem);
-  line-height: 0.88;
+  font-weight: 900;
+  line-height: 1.05;
 }
 
 .contact-prompt {
