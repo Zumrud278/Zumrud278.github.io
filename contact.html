@@ -42,48 +42,33 @@
     </header>
     <main class="page-content">
       <div class="contact-layout">
+        <section class="contact-intro" aria-labelledby="contact-title">
+          <h1 class="contact-title" id="contact-title"><span>Say</span><span>hello.</span></h1>
+          <p class="contact-prompt">Pick a sticker or write me below.</p>
+          <nav class="contact-stickers" aria-label="Contact links">
+            <a class="contact-sticker contact-sticker-email" href="mailto:zismayilova167@gmail.com">Email me</a>
+            <a class="contact-sticker contact-sticker-linkedin" href="https://www.linkedin.com/in/zumrud-ismayilova-427bb9382/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="contact-sticker contact-sticker-github" href="https://github.com/Zumrud278/Zumrud278.github.io" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </nav>
+        </section>
         <section class="contact-card" aria-labelledby="contact-form-title">
-          <h1 class="page-title" id="contact-form-title">Send me a message</h1>
+          <h2 class="contact-form-title" id="contact-form-title">Or write it down</h2>
           <form class="contact-form">
             <div class="form-field">
-              <label for="contact-name">Name</label>
+              <label for="contact-name">Your name</label>
               <input id="contact-name" name="name" type="text" autocomplete="name" required>
             </div>
             <div class="form-field">
-              <label for="contact-email">Email</label>
+              <label for="contact-email">Your email</label>
               <input id="contact-email" name="email" type="email" autocomplete="email" required>
             </div>
             <div class="form-field">
-              <label for="contact-subject">Subject</label>
-              <input id="contact-subject" name="subject" type="text" required>
-            </div>
-            <div class="form-field">
               <label for="contact-message">Message</label>
-              <textarea id="contact-message" name="message" rows="5" required></textarea>
+              <textarea id="contact-message" name="message" rows="6" required></textarea>
             </div>
-            <button class="button" type="button">Send message</button>
+            <button class="button" type="button">Send it</button>
           </form>
         </section>
-        <aside class="contact-social" aria-label="Social profiles">
-          <article class="contact-social-tile contact-linkedin-tile">
-            <h2>LinkedIn</h2>
-            <a class="contact-link-button" href="https://www.linkedin.com/in/zumrud-ismayilova-427bb9382/" aria-label="LinkedIn">
-              <span>Visit LinkedIn</span>
-              <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
-                <path fill="currentColor" d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM7.93 18.45H4.96V9h2.97v9.45ZM6.45 7.71a1.72 1.72 0 1 1 0-3.44 1.72 1.72 0 0 1 0 3.44Zm12 10.74h-2.96v-4.6c0-1.1-.02-2.52-1.54-2.52-1.55 0-1.79 1.2-1.79 2.44v4.68H9.2V9h2.84v1.29h.04c.4-.74 1.36-1.53 2.8-1.53 3 0 3.56 1.97 3.56 4.54v5.15Z"/>
-              </svg>
-            </a>
-          </article>
-          <article class="contact-social-tile contact-github-tile">
-            <h2>GitHub</h2>
-            <a class="contact-link-button" href="https://github.com/Zumrud278/Zumrud278.github.io" aria-label="GitHub">
-              <span>Visit GitHub</span>
-              <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
-                <path fill="currentColor" d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.56.1.76-.24.76-.54v-2.08c-3.1.67-3.76-1.32-3.76-1.32-.5-1.29-1.24-1.63-1.24-1.63-1.01-.69.08-.68.08-.68 1.12.08 1.72 1.15 1.72 1.15 1 .1.76 2.19 3.91 1.56.1-.72.39-1.22.7-1.5-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.06 1.15a10.64 10.64 0 0 1 5.57 0c2.12-1.44 3.05-1.15 3.05-1.15.61 1.54.23 2.68.12 2.96.72.78 1.15 1.78 1.15 3 0 4.29-2.61 5.23-5.1 5.51.4.34.76 1.02.76 2.06v3.05c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/>
-              </svg>
-            </a>
-          </article>
-        </aside>
       </div>
     </main>
     <footer class="site-footer">
